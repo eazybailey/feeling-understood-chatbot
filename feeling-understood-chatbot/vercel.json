@@ -1,7 +1,29 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "maxDuration": 30
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/chat.js",
+      "use": "@vercel/node"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/api/chat",
+      "dest": "/api/chat.js"
+    }
+  ]
 }
+```
+
+3. Commit changes
+
+### Step 3: Verify Your File Structure
+
+Your GitHub should look exactly like this:
+```
+feeling-understood-chatbot/
+  ├── api/
+  │   └── chat.js
+  ├── index.html
+  ├── package.json
+  └── vercel.json
